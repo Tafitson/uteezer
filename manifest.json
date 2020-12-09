@@ -1,0 +1,17 @@
+{
+    "name": "uteezer.tafitson",
+    "description": "description of uteezer",
+
+    "title": "uteezer",
+    "architecture": "@CLICK_ARCH@",
+    "hooks": {
+        "uteezer": {
+            "apparmor": "uteezer.apparmor",
+            "desktop":  "uteezer.desktop"
+        }
+    },
+    "version": "0.4.1",
+    "maintainer": "David Thiele <david@sufftrupp.de>",
+    "framework" : "ubuntu-sdk-16.04"
+}
+
