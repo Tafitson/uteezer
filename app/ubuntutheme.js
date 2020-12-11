@@ -35,6 +35,10 @@
 		.page-player .player-bottom .player-controls{\
 			width: 100%;\
 		}\
+		.page-player .player-bottom .player-controls ul{\
+			width: 100%;\
+            justify-content: space-around;\
+		}\
 		.track-title{\
 			min-width: 80px !important;\
 		}\
@@ -42,8 +46,14 @@
 			margin: 12px 2% 0;\
 		}\
 		.page-player .player-full .player-container {\
-			display: block;\
+			display: block !important;\
 			overflow: scroll;\
+		}\
+		.page-player .player-full {\
+			min-width: 0px!important;\
+		}\
+		.page-player .lyrics-content {\
+			max-width: 92%!important;\
 		}\
 	}";
 
