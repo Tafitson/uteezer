@@ -37,21 +37,33 @@
 		}\
 		.page-player .player-bottom .player-controls ul{\
 			width: 100%;\
-            justify-content: space-around;\
+      justify-content: space-around;\
 		}\
 		.track-title{\
 			min-width: 80px !important;\
 		}\
 		.page-player .player-queuelist .player-container {\
-			margin: 5px 1% 0;\
+			margin: 5px 1% 0 !important;\
 		}\
 		.page-player .player-full .player-container {\
 			display: block !important;\
 			overflow: scroll;\
 		}\
+		.page-player .player-full .player-container .queuelist-cover .queuelist-cover-thumbnail figure.thumbnail {\
+			position: relative;\
+			left: 50%;\
+			transform: translateX(-50%);\
+		}\
+		.page-player .player-full .player-container .queuelist-cover {\
+			width: unset !important;\
+			margin-right: unset !important;\
+		}\
     .page-player .player-full .player-container .queuelist-content .datagrid-cell.cell-duration{\
       display: none;\
-		}\
+    }\
+    .page-player .player-full .player-container .queuelist-content .datagrid-row{\
+      padding: none !important;\
+    }\
 		.page-player .player-full {\
 			min-width: 0px!important;\
 		}\
