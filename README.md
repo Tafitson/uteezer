@@ -17,3 +17,7 @@ using bluetooth speakers/headphones.
 What works/what doesnt:
 
 [UTeezer Roadmap](https://github.com/Tafitson/uteezer/blob/main/Roadmap.md "UTeezer Roadmap")
+
+
+Get it here:
+[![OpenStore](https://open-store.io/badges/en_US.svg)](https://open-store.io/app/uteezer.tafitson)
