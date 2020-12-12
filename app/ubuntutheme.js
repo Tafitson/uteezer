@@ -43,11 +43,14 @@
 			min-width: 80px !important;\
 		}\
 		.page-player .player-queuelist .player-container {\
-			margin: 12px 2% 0;\
+			margin: 5px 1% 0;\
 		}\
 		.page-player .player-full .player-container {\
 			display: block !important;\
 			overflow: scroll;\
+		}\
+    .page-player .player-full .player-container .queuelist-content .datagrid-cell.cell-duration{\
+      display: none;\
 		}\
 		.page-player .player-full {\
 			min-width: 0px!important;\
