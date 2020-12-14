@@ -18,6 +18,8 @@ What works/what doesnt:
 
 [UTeezer Roadmap](https://github.com/Tafitson/uteezer/blob/main/Roadmap.md "UTeezer Roadmap")
 
+Credits:
+Work is based on and highly inspired by [mateosalta's](https://github.com/mateosalta) [cuddly-bassoon](https://github.com/mateosalta/cuddly-bassoon).
 
 Get it here:
 [![OpenStore](https://open-store.io/badges/en_US.svg)](https://open-store.io/app/uteezer.tafitson)
