@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=UTeezer
 Comment=Morph based responsive Deezer Webapp
-Exec=qmlscene %u app/Main.qml --scaling --multisample --gles --disable-gpu
+Exec=qmlscene %u app/Main.qml --scaling --software
 Terminal=false
 Type=Application
 Icon=icon.png
