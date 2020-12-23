@@ -3,9 +3,7 @@
          "webview",
          "networking",
          "audio",
-         "video",
-         "keep-display-on"
-        
+         "video"
     ],
     "policy_version": 16.04
 }
