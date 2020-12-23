@@ -9,10 +9,7 @@
 - Responsive Search
 - Responsive Queue List
 - Responsive Lyrics View
-- Forward/Back Floating Buttons
-
-**Partially Working, to be fixed until 1.0**
-- Favorits/Explore/Shows/Home Floating Buttons (only working when no music plays, will otherwise result in a alert window)
+- Floating Buttons
 
 **Not Working, to be fixed until 1.0**
 - Jumping within a Song with the slide bar

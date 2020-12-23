@@ -76,7 +76,8 @@ MainView {
         id: subscriptions
         iconName: "grip-large"
         onTriggered: {
-          webview.runJavaScript('window.location.assign("https://www.deezer.com/explore")')
+          webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[2]; \
+            link.click();')
         }
         text: qsTr("Explore")
       },
@@ -85,7 +86,8 @@ MainView {
         id: account
         iconName: "media-playback-start"
         onTriggered: {
-          webview.url = 'https://www.deezer.com/shows'
+          webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[1]; \
+            link.click();')
         }
         text: qsTr("Shows")
       },
@@ -110,7 +112,8 @@ MainView {
         id: home
         iconName: "home"
         onTriggered: {
-          webview.url = 'https://www.deezer.com/'
+          webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[0]; \
+            link.click();')
         }
         text: qsTr("Home")
       },  
@@ -127,7 +130,8 @@ MainView {
         id: trending
         iconName: "like"
         onTriggered: {
-          webview.url = 'https://www.deezer.com/profile'
+          webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[3]; \
+            link.click();')
         }
         text: qsTr("Favorites")
       }        
