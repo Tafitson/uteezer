@@ -1,7 +1,7 @@
 # UTeezer 
 
 ## Unofficial responsive Deezer webapp for Ubuntu Touch
-**This is a beta. Expect Bugs. Does not work on Pinephone yet**
+**This is a beta. Expect Bugs.**
 
 This is an unofficial Deezer Webapp with focus on usability on Phones.
 The Deezer website is by design not ready for usage on smaller devices.

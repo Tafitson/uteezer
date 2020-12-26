@@ -10,12 +10,12 @@
 - Responsive Queue List
 - Responsive Lyrics View
 - Floating Buttons
+- Workin on PinePhone/PineTab (as long as screen is active)
 
 **Not Working, to be fixed until 1.0**
 - Jumping within a Song with the slide bar
 - Responsive Notification Popup Menu
 - Responsive Profile Popup Menu
-- App Workin on PinePhone/PineTab
 
 **Not Working, don't know how to fix/if fixable; help appreciated**
 - Run Music in Background without stopping suspention with UT Tweak Tool App

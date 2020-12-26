@@ -9,7 +9,6 @@ import QtSystemInfo 5.5
 
 MainView {
   id:window
-
   objectName: "mainView"
   theme.name: "Ubuntu.Components.Themes.SuruDark"
 
@@ -28,7 +27,7 @@ MainView {
     enableSelectOverride: true
 
 
-    settings.fullScreenSupportEnabled: ture
+    settings.fullScreenSupportEnabled: true
     property var currentWebview: webview
     settings.pluginsEnabled: true
 
@@ -53,7 +52,6 @@ MainView {
 
     anchors{
       fill:parent
-      centerIn: parent.verticalCenter
     }
 
     url: "https://www.deezer.com/"
@@ -159,9 +157,9 @@ MainView {
   }
 
   Connections {
-    target: window.webview
+    target: webview
     
-    onIsFullScreenChanged: window.setFullscreen(window.webview.isFullScreen)
+    onIsFullScreenChanged: window.setFullscreen(webview.isFullScreen)
   }
   function setFullscreen(fullscreen) {
     if (!window.forceFullscreen) {

@@ -79,13 +79,15 @@
 	} else if (typeof addStyle != "undefined") {
 		addStyle(css);
 	} else {
-			var node = document.createElement("style");
-			node.appendChild(document.createTextNode(css));
-			var head = document.head;
-			if (head) {
-				head.appendChild(node);
-			} else {
-				document.documentElement.appendChild(node);
-			}
+    setTimeout(function () {
+      var node = document.createElement("style");
+      node.appendChild(document.createTextNode(css));
+      var head = document.head;
+      if (head) {
+        head.appendChild(node);
+      } else {
+        document.documentElement.appendChild(node);
+      }
+    }, 1000);
 	}
 })();

@@ -10,7 +10,7 @@
             "desktop":  "uteezer.desktop"
         }
     },
-    "version": "0.5.0",
+    "version": "0.5.1",
     "maintainer": "David Thiele <david@sufftrupp.de>",
     "framework" : "ubuntu-sdk-16.04"
 }
