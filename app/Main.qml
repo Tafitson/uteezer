@@ -15,7 +15,8 @@ MainView {
   applicationName: "uteezer.tafitson"
 
 
-  backgroundColor : "transparent"
+  backgroundColor : "#ffffff"
+
 
 
 
@@ -57,7 +58,7 @@ MainView {
     url: "https://www.deezer.com/"
     userScripts: [
       WebEngineScript {
-        injectionPoint: WebEngineScript.DocumentCreation
+        injectionPoint: WebEngineScript.DocumentReady
         worldId: WebEngineScript.MainWorld
         name: "QWebChannel"
         sourceUrl: "ubuntutheme.js"
