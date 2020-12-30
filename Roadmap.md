@@ -11,9 +11,9 @@
 - Responsive Lyrics View
 - Floating Buttons
 - Workin on PinePhone/PineTab (as long as screen is active)
+- Jumping within a Song with the slide bar
 
 **Not Working, to be fixed until 1.0**
-- Jumping within a Song with the slide bar
 - Responsive Notification Popup Menu
 - Responsive Profile Popup Menu
 

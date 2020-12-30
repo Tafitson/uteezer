@@ -31,6 +31,7 @@
 		} \
 		.page-player .player-bottom .player-track{\
 			width: 100%;\
+      padding-bottom: 20px;\
 		}\
 		.page-player .player-bottom .player-controls{\
 			width: 100%;\
@@ -69,8 +70,36 @@
 		}\
 		.page-player .lyrics-content {\
 			max-width: 92%!important;\
-		}\
-	}";
+    }\
+    .track-container{\
+      padding-bottom: 20px;\
+    }\
+	}\
+  \
+  .slider-track{\
+    height: 0px;\
+  }\
+  .slider-track-input {\
+    height: 18px;\
+    margin-top: -18px;\
+  }\
+  .slider-track-default {\
+    margin-top: 0px;\
+    height: 6px;\
+  }\
+  .slider-track-active {\
+    margin-top: 0px;\
+    height: 6px;\
+    background: linear-gradient(1deg,#d81b60 13%,#f06262) !important;\
+  }\
+  .slider-track-input::-webkit-slider-thumb {\
+    -webkit-appearance: none;\
+    appearance: none;\
+    width: 18px;\
+    height: 18px;\
+    background: #ef5365;\
+    top: 12px;\
+  }";
 
 	if (typeof GM_addStyle != "undefined") {
 		GM_addStyle(css);
@@ -85,9 +114,73 @@
       var head = document.head;
       if (head) {
         head.appendChild(node);
+        let slider = document.getElementsByClassName("slider")[0];
+        if(slider){
+          slider.addEventListener("touchstart", touchHandler, true);
+          slider.addEventListener("touchmove", touchHandler, true);
+          slider.addEventListener("touchend", touchHandler, true);
+          slider.addEventListener("touchcancel", touchHandler, true);
+        }
+        let sliderDiv = document.getElementsByClassName("slider-autohide")[0];
+        if(sliderDiv){
+          sliderDiv.classList.remove("slider-autohide");
+          sliderDiv.classList.add("is-active");
+        }
+        document.body.addEventListener("touchstart", ()=>{
+          let sliderDiv = document.getElementsByClassName("slider-autohide")[0];
+          if(sliderDiv){
+            sliderDiv.classList.remove("slider-autohide");
+            sliderDiv.classList.add("is-active");
+          }
+        });
+        document.body.addEventListener("touchend", ()=>{
+          let sliderDiv = document.getElementsByClassName("slider-autohide")[0];
+          if(sliderDiv){
+            sliderDiv.classList.remove("slider-autohide");
+            sliderDiv.classList.add("is-active");
+          }
+        });
+        document.body.addEventListener("touchcancel", ()=>{
+          let sliderDiv = document.getElementsByClassName("slider-autohide")[0];
+          if(sliderDiv){
+            sliderDiv.classList.remove("slider-autohide");
+            sliderDiv.classList.add("is-active");
+          }
+        });
+        document.body.addEventListener("touchmove", ()=>{
+          let sliderDiv = document.getElementsByClassName("slider-autohide")[0];
+          if(sliderDiv){
+            sliderDiv.classList.remove("slider-autohide");
+            sliderDiv.classList.add("is-active");
+          }
+        });
       } else {
         document.documentElement.appendChild(node);
       }
     }, 1000);
 	}
 })();
+
+function touchHandler(event) {
+  var touches = event.changedTouches,
+    first = touches[0],
+    type = "";
+  switch(event.type) {
+    case "touchstart": type = "mousedown"; break;
+    case "touchmove":  type = "mousemove"; break;        
+    case "touchend":   type = "mouseup";   break;
+    default:           return;
+  }
+
+  // initMouseEvent(type, canBubble, cancelable, view, clickCount, 
+  //                screenX, screenY, clientX, clientY, ctrlKey, 
+  //                altKey, shiftKey, metaKey, button, relatedTarget);
+
+  var simulatedEvent = document.createEvent("MouseEvent");
+  simulatedEvent.initMouseEvent(type, true, true, window, 1, 
+    first.screenX, first.screenY, 
+    first.clientX, first.clientY, false, 
+    false, false, false, 0, null);
+  first.target.dispatchEvent(simulatedEvent);
+  event.preventDefault();
+}
