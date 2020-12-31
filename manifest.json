@@ -7,7 +7,8 @@
     "hooks": {
         "uteezer": {
             "apparmor": "uteezer.apparmor",
-            "desktop":  "uteezer.desktop"
+            "desktop":  "uteezer.desktop",
+            "urls": "uteezer.url-dispatcher"
         }
     },
     "version": "0.6.0",

@@ -177,6 +177,20 @@ MainView {
     }
   }
 
+  Connections {
+    target: UriHandler
+
+    onOpened: {
+
+      if (uris.length > 0) {
+        console.log('Incoming call from UriHandler ' + uris[0]);
+        webview.url = uris[0];
+      }
+    }
+  }
+
+   
+
   ScreenSaver {
     id: screenSaver
     screenSaverEnabled: !(Qt.application.active) || !webview.recentlyAudible
