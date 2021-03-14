@@ -1,5 +1,4 @@
 import QtQuick 2.4
-import QtFeedback 5.0
 import Ubuntu.Components 1.3
 import QtQuick.Window 2.1
 
@@ -22,16 +21,6 @@ Item {
     property real actionButtonDistance: 1.6* hintSize
 
     anchors.fill: parent
-
-    HapticsEffect {
-        id: clickEffect
-        attackIntensity: 0.0
-        attackTime: 50
-        intensity: 1.0
-        duration: 10
-        fadeTime: 50
-        fadeIntensity: 0.0
-    }
 
     Rectangle {
         id: bgVisual
@@ -135,7 +124,7 @@ Item {
                         bottomMargin: modelData.top ? units.gu(3) : undefined
                         horizontalCenter: icon.horizontalCenter
                     }
-                    color: Theme.palette.normal.foregroundText
+                    color: "white"
                     font.bold: true
                     fontSize: "medium"
 
