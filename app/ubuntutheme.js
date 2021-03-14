@@ -5,6 +5,9 @@
 			overflow:auto !important;\
 			min-width: unset !important;\
 		}\
+		body::-webkit-scrollbar {\
+        display: none;\
+    }\
 		#page_topbar{\
 			min-width: unset !important;\
 		} \
@@ -73,6 +76,16 @@
     }\
     .track-container{\
       padding-bottom: 20px;\
+    }\
+    .carousel .container{\
+      margin-left: 5px !important;\
+      width: 97vw !important;\
+    }\
+    .page-main{\
+      min-width: 0px !important;\
+    }\
+    .naboo{\
+      min-width: 0px !important;\
     }\
 	}\
   \
