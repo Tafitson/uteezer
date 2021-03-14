@@ -134,7 +134,6 @@ Item {
                     anchors.fill: parent
                     enabled: modelData.enabled
                     onClicked: {
-                        clickEffect.start()
                         bottomEdgeHint.state = "collapsed"
                         modelData.triggered(null)
                     }
