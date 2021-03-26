@@ -86,6 +86,53 @@
     }\
     .naboo{\
       min-width: 0px !important;\
+      padding-bottom: 180px !important;\
+    }\
+    .page-naboo-search .container{\
+      padding: 15px;\
+    }\
+    .page-naboo-search .container .datagrid .datagrid-row{\
+      padding: 0px;\
+    }\
+    .page-naboo-search .container .datagrid .datagrid-row .cell-popularity{\
+      display: none;\
+    }\
+    .page-naboo-search .container .datagrid .datagrid-row .cell-checkbox{\
+      display: none;\
+    }\
+    .page-naboo-search .container .datagrid .datagrid-row .cell-duration{\
+      display: none;\
+    }\
+    .page-naboo-search .container .datagrid .datagrid-row .cell-show{\
+      width: 30%;\
+    }\
+    .page-naboo-search .container .datagrid .datagrid-row .cell-title{\
+      min-width: 30%;\
+    }\
+    .explicit, .cell-explicit, .cell-explicit-small{\
+      display: none;\
+    }\
+    .datagrid-cell.cell-date{\
+      width: 70px;\
+      font-size: 8px;\
+    }\
+    .datagrid-cell-action.cell-heard{\
+      padding-left: 5px;\
+    }\
+    .search-top-result .thumbnail .picture-img{\
+      width: 100px;\
+      height: 100px;\
+    }\
+    .thumbnail .action {\
+      bottom: 6px !important;\
+      left: 5px !important;\
+    }\
+    .thumbnail .action-item-btn{\
+      opacity: 0.8 !important;\
+      font-size: 10px !important;\
+      height: 20px !important;\
+      width: 20px !important;\
+      line-height: 20px !important;\
     }\
 	}\
   \
