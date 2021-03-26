@@ -10,13 +10,15 @@
     }\
 		#page_topbar{\
 			min-width: unset !important;\
+			left: 0px !important;\
 		} \
+    #page_topbar .popper-wrapper .popper .popper-content.popper-account{\
+      z-index: 200;\
+      max-width: 97%;\
+    }\
 		#page_sidebar{\
 			visibility:hidden !important;\
 		} \
-		#page_topbar{\
-			left: 0px !important;\
-		}\
 		#page_content{\
 			margin-left: 0px !important;\
 		}\
@@ -28,6 +30,7 @@
 			overflow-x: scroll !important;\
 			height: auto;\
 			display: block !important;\
+      z-index: 195 !important;\
 		} \
 		.page-player .player-bottom .player-track .track-container .track-heading .track-actions{\
 			display: none;\
