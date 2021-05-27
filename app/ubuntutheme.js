@@ -13,7 +13,7 @@
 			left: 0px !important;\
 		} \
     #page_topbar .popper-wrapper .popper .popper-content.popper-account{\
-      z-index: 200;\
+      z-index: 301;\
       max-width: 97%;\
     }\
 		#page_sidebar{\
@@ -27,10 +27,9 @@
 		}\
 		#page_player .player-bottom{\
 			min-width: 0px!important;\
-			overflow-x: scroll !important;\
 			height: auto;\
 			display: block !important;\
-      z-index: 195 !important;\
+      z-index: 300 !important;\
 		} \
 		.page-player .player-bottom .player-track .track-container .track-heading .track-actions{\
 			display: none;\
