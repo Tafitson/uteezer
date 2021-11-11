@@ -73,8 +73,24 @@
 		.page-player .player-full {\
 			min-width: 0px!important;\
 		}\
+    .page-player .player-full .player-header{\
+      justify-content: space-evenly;\
+    }\
+    .page-player .player-full .player-close {\
+      transform: unset;\
+      position: static;\
+    }\
 		.page-player .lyrics-content {\
 			max-width: 92%!important;\
+    }\
+    .page-player .lyrics-line {\
+      font-size: 18px;\
+    }\
+    .page-player .lyrics-line.is-active {\
+      font-size: 25px;\
+    }\
+    .page-player .lyrics-synchro .lyrics-item {\
+      margin-bottom: unset;\
     }\
     .track-container{\
       padding-bottom: 20px;\
@@ -161,6 +177,12 @@
     height: 18px;\
     background: #ef5365;\
     top: 12px;\
+  }\
+  ._3jkbz {\
+    display: none !important;\
+  }\
+  .ZLI1L>:not(:first-child) {\
+    margin-left: unset !important;\
   }";
 
 	if (typeof GM_addStyle != "undefined") {

@@ -72,23 +72,23 @@ MainView {
     visible: true
     actions: [
       RadialAction {
-        id: subscriptions
+        id: explore
         iconName: "grip-large"
         onTriggered: {
-          webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[2]; \
+          webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[3]; \
             link.click();')
         }
         text: qsTr("Explore")
       },
       
       RadialAction {
-        id: account
+        id: podcasts
         iconName: "media-playback-start"
         onTriggered: {
           webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[1]; \
             link.click();')
         }
-        text: qsTr("Shows")
+        text: qsTr("Podcasts")
       },
       RadialAction {
         id: forward
@@ -126,10 +126,10 @@ MainView {
         text: qsTr("Back")
       },
       RadialAction {
-        id: trending
+        id: favorites
         iconName: "like"
         onTriggered: {
-          webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[3]; \
+          webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[4]; \
             link.click();')
         }
         text: qsTr("Favorites")
