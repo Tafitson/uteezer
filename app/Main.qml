@@ -42,6 +42,8 @@ MainView {
     profile:  WebEngineProfile{
       id: webContext
       persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies
+      storageName: "Storage"
+      persistentStoragePath: "/home/phablet/.cache/uteezer.tafitson/QtWebEngine"
       property alias dataPath: webContext.persistentStoragePath
 
       dataPath: dataLocation
@@ -59,7 +61,7 @@ MainView {
     userScripts: [
       WebEngineScript {
         injectionPoint: WebEngineScript.DocumentReady
-        worldId: WebEngineScript.MainWorld
+        worldId: WebEngineScript.UserWorld
         name: "QWebChannel"
         sourceUrl: "ubuntutheme.js"
       }
