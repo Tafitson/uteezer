@@ -1,5 +1,5 @@
 (window.onload = function () {
-	var css = 
+	let css = 
 	"@media (max-width: 990px){\
 		body{\
 			overflow:auto !important;\
@@ -102,6 +102,12 @@
       margin-left: 5px !important;\
       width: 97vw !important;\
     }\
+    .carousel .container .channel-headings .heading-2, .carousel .container .channel-headings .heading-2-sub {\
+      max-width: 65vw !important;\
+      white-space:nowrap;\
+      overflow:hidden;\
+      text-overflow:ellipsis;\
+    }\
     .page-main{\
       min-width: 0px !important;\
     }\
@@ -122,10 +128,6 @@
     .search-top-result .thumbnail .picture-img{\
       width: 100px;\
       height: 100px;\
-    }\
-    .thumbnail .action {\
-      bottom: 6px !important;\
-      left: 5px !important;\
     }\
     .thumbnail .action-item-btn{\
       opacity: 0.8 !important;\
@@ -251,11 +253,21 @@ function touchHandler(event) {
   //                screenX, screenY, clientX, clientY, ctrlKey, 
   //                altKey, shiftKey, metaKey, button, relatedTarget);
 
-  var simulatedEvent = document.createEvent("MouseEvent");
-  simulatedEvent.initMouseEvent(type, true, true, window, 1, 
-    first.screenX, first.screenY, 
-    first.clientX, first.clientY, false, 
-    false, false, false, 0, null);
+  let simulatedEvent = new MouseEvent(type, { 
+    bubbles: true,
+    cancelable: true,
+    view: window,
+    screenX: first.screenX, 
+    screenY: first.screenY,
+    clientX: first.clientX,
+    clientY: first.clientY,
+    ctrlKey: false,
+    altKey: false,
+    shiftKey: false,
+    metaKey: false,
+    button: 0,
+    relatedTarget: null
+  });
   first.target.dispatchEvent(simulatedEvent);
   event.preventDefault();
 }

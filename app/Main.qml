@@ -1,5 +1,5 @@
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import QtQuick.Window 2.2
 import Morph.Web 0.1
 import "UCSComponents"
@@ -10,7 +10,7 @@ import QtSystemInfo 5.5
 MainView {
   id:window
   objectName: "uteezer"
-  theme.name: "Ubuntu.Components.Themes.SuruDark"
+  theme.name: "Lomiri.Components.Themes.SuruDark"
 
   applicationName: "uteezer.tafitson"
 

@@ -1,9 +1,9 @@
 {
     "name": "uteezer.tafitson",
-    "description": "description of uteezer",
+    "description": "Unofficial responsive Deezer Webapp",
 
     "title": "uteezer",
-    "architecture": "@CLICK_ARCH@",
+    "architecture": "all",
     "hooks": {
         "uteezer": {
             "apparmor": "uteezer.apparmor",
@@ -11,8 +11,8 @@
             "urls": "uteezer.url-dispatcher"
         }
     },
-    "version": "0.7.6-xenial",
+    "version": "0.7.6-focal",
     "maintainer": "David Thiele <david@sufftrupp.de>",
-    "framework" : "ubuntu-sdk-16.04.4"
+    "framework" : "ubuntu-sdk-20.04"
 }
 
