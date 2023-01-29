@@ -9,17 +9,12 @@ import QtSystemInfo 5.5
 
 MainView {
   id:window
-  objectName: "mainView"
+  objectName: "uteezer"
   theme.name: "Ubuntu.Components.Themes.SuruDark"
 
   applicationName: "uteezer.tafitson"
 
-
-  backgroundColor : "#ffffff"
-
-
-
-
+  backgroundColor : "#000000"
 
   WebView {
     id: webview
@@ -191,7 +186,6 @@ MainView {
     }
   }
 
-   
 
   ScreenSaver {
     id: screenSaver

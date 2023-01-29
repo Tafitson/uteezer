@@ -8,6 +8,9 @@
 		body::-webkit-scrollbar {\
         display: none;\
     }\
+    .container {\
+      padding: 8px;\
+    }\
 		#page_topbar{\
 			min-width: unset !important;\
 			left: 0px !important;\
@@ -106,27 +109,6 @@
       min-width: 0px !important;\
       padding-bottom: 180px !important;\
     }\
-    .page-naboo-search .container{\
-      padding: 15px;\
-    }\
-    .page-naboo-search .container .datagrid .datagrid-row{\
-      padding: 0px;\
-    }\
-    .page-naboo-search .container .datagrid .datagrid-row .cell-popularity{\
-      display: none;\
-    }\
-    .page-naboo-search .container .datagrid .datagrid-row .cell-checkbox{\
-      display: none;\
-    }\
-    .page-naboo-search .container .datagrid .datagrid-row .cell-duration{\
-      display: none;\
-    }\
-    .page-naboo-search .container .datagrid .datagrid-row .cell-show{\
-      width: 30%;\
-    }\
-    .page-naboo-search .container .datagrid .datagrid-row .cell-title{\
-      min-width: 30%;\
-    }\
     .explicit, .cell-explicit, .cell-explicit-small{\
       display: none;\
     }\
@@ -151,6 +133,21 @@
       height: 20px !important;\
       width: 20px !important;\
       line-height: 20px !important;\
+    }\
+    .container ._1hePk._2ZD3_._3gdBA, .container ._2YQby>.chakra-button.css-irwtr3:first-child {\
+      display: none\
+    }\
+    .container ._1hePk._2ZD3_._33B7t {\
+      margin-left: 7px;\
+    }\
+    .container ._1hePk._2ZD3_._33B7t ._3v4QN {\
+      display: none;\
+    }\
+    .container ._2YQby {\
+      margin-left: unset;\
+    }\
+    .container ._1caJL>:not(:first-child) {\
+      margin-left: 8px;\
     }\
 	}\
   \
@@ -177,12 +174,6 @@
     height: 18px;\
     background: #ef5365;\
     top: 12px;\
-  }\
-  ._3jkbz {\
-    display: none !important;\
-  }\
-  .ZLI1L>:not(:first-child) {\
-    margin-left: unset !important;\
   }";
 
 	if (typeof GM_addStyle != "undefined") {
