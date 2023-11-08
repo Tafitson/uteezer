@@ -6,7 +6,7 @@ Item {
     id: bottomEdge
 
     property int hintSize: units.gu(8)
-    property color hintColor: "#ef5466"
+    property color hintColor: "#a238ff"
     property string hintIconName: "toolkit_chevron-up_2gu"
     property alias hintIconSource: hintIcon.source
     property color hintIconColor: "#ffffff"

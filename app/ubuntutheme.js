@@ -19,32 +19,27 @@
       z-index: 301;\
       max-width: 97%;\
     }\
-		#page_sidebar{\
+		.css-efpag6{\
 			visibility:hidden !important;\
 		} \
 		#page_content{\
 			margin-left: 0px !important;\
 		}\
-		.player-track{\
-			padding: 0px !important;\
-		}\
-		#page_player .player-bottom{\
+		#page_player .css-tzddi9{\
 			min-width: 0px!important;\
 			height: auto;\
 			display: block !important;\
       z-index: 300 !important;\
 		} \
-		.page-player .player-bottom .player-track .track-container .track-heading .track-actions{\
-			display: none;\
-		} \
-		.page-player .player-bottom .player-track{\
+		.page-player .css-tzddi9 .css-w7wtb1 {\
+			padding: 0px !important;\
 			width: 100%;\
       padding-bottom: 20px;\
 		}\
-		.page-player .player-bottom .player-controls{\
+		.page-player .css-tzddi9 .css-s4gaps{\
 			width: 100%;\
 		}\
-		.page-player .player-bottom .player-controls ul{\
+		.page-player .css-tzddi9 .css-4vwzwv{\
 			width: 100%;\
       justify-content: space-around;\
 		}\
@@ -94,9 +89,6 @@
     }\
     .page-player .lyrics-synchro .lyrics-item {\
       margin-bottom: unset;\
-    }\
-    .track-container{\
-      padding-bottom: 20px;\
     }\
     .carousel .container{\
       margin-left: 5px !important;\

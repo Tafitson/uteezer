@@ -69,24 +69,25 @@ MainView {
     visible: true
     actions: [
       RadialAction {
+        id: home
+        iconName: "home"
+        onTriggered: {
+          webview.runJavaScript('var link = document.getElementsByClassName("css-10rh1s9")[0].childNodes[0]; \
+            link.click();')
+        }
+        text: qsTr("Home")
+      },
+
+      RadialAction {
         id: explore
         iconName: "grip-large"
         onTriggered: {
-          webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[3]; \
+          webview.runJavaScript('var link = document.getElementsByClassName("css-10rh1s9")[0].childNodes[1]; \
             link.click();')
         }
         text: qsTr("Explore")
       },
-      
-      RadialAction {
-        id: podcasts
-        iconName: "media-playback-start"
-        onTriggered: {
-          webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[1]; \
-            link.click();')
-        }
-        text: qsTr("Podcasts")
-      },
+
       RadialAction {
         id: forward
         enabled: webview.canGoForward
@@ -96,6 +97,7 @@ MainView {
         }
         text: qsTr("Forward")
       },
+
       RadialAction {
         id: reload
         iconName: "reload"
@@ -104,15 +106,21 @@ MainView {
         }
         text: qsTr("Reload")
       },
+      
       RadialAction {
-        id: home
-        iconName: "home"
+        id: darkmode
+        iconName: "night-mode"
         onTriggered: {
-          webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[0]; \
-            link.click();')
+          webview.runJavaScript('var profile = document.getElementsByClassName("topbar-profile")[0]; \
+            var clickProfile = profile && !profile.classList.contains("is-active"); \
+            if(clickProfile) profile.click(); \
+            var dmSwitch = document.getElementsByClassName("css-1967ax6")[0]; \
+            dmSwitch.click(); \
+            if(clickProfile) profile.click();')
         }
-        text: qsTr("Home")
-      },  
+        text: qsTr("Toggle Dark Mode")
+      },
+
       RadialAction {
         id: back
         enabled: webview.canGoBack
@@ -122,11 +130,12 @@ MainView {
         }
         text: qsTr("Back")
       },
+
       RadialAction {
         id: favorites
         iconName: "like"
         onTriggered: {
-          webview.runJavaScript('var link = document.getElementsByClassName("sidebar-nav-link")[4]; \
+          webview.runJavaScript('var link = document.getElementsByClassName("css-10rh1s9")[0].childNodes[0]; \
             link.click();')
         }
         text: qsTr("Favorites")

@@ -11,7 +11,7 @@
             "urls": "uteezer.url-dispatcher"
         }
     },
-    "version": "0.7.6-focal",
+    "version": "0.8",
     "maintainer": "David Thiele <david@sufftrupp.de>",
     "framework" : "ubuntu-sdk-20.04"
 }
