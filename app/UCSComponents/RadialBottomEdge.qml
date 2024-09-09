@@ -1,12 +1,12 @@
 import QtQuick 2.4
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import QtQuick.Window 2.1
 
 Item {
     id: bottomEdge
 
     property int hintSize: units.gu(8)
-    property color hintColor: "#ef5466"
+    property color hintColor: "#a238ff"
     property string hintIconName: "toolkit_chevron-up_2gu"
     property alias hintIconSource: hintIcon.source
     property color hintIconColor: "#ffffff"
@@ -235,7 +235,7 @@ Item {
                 SmoothedAnimation {
                     target: bottomEdgeHint
                     property: "y"
-                    duration: UbuntuAnimation.BriskDuration
+                    duration: LomiriAnimation.BriskDuration
                 }
             }
         ]

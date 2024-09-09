@@ -1,5 +1,5 @@
 (window.onload = function () {
-	var css = 
+	let css = 
 	"@media (max-width: 990px){\
 		body{\
 			overflow:auto !important;\
@@ -19,32 +19,27 @@
       z-index: 301;\
       max-width: 97%;\
     }\
-		#page_sidebar{\
+		.css-efpag6{\
 			visibility:hidden !important;\
 		} \
 		#page_content{\
 			margin-left: 0px !important;\
 		}\
-		.player-track{\
-			padding: 0px !important;\
-		}\
-		#page_player .player-bottom{\
+		#page_player .css-tzddi9{\
 			min-width: 0px!important;\
 			height: auto;\
 			display: block !important;\
       z-index: 300 !important;\
 		} \
-		.page-player .player-bottom .player-track .track-container .track-heading .track-actions{\
-			display: none;\
-		} \
-		.page-player .player-bottom .player-track{\
+		.page-player .css-tzddi9 .css-w7wtb1 {\
+			padding: 0px !important;\
 			width: 100%;\
       padding-bottom: 20px;\
 		}\
-		.page-player .player-bottom .player-controls{\
+		.page-player .css-tzddi9 .css-s4gaps{\
 			width: 100%;\
 		}\
-		.page-player .player-bottom .player-controls ul{\
+		.page-player .css-tzddi9 .css-4vwzwv{\
 			width: 100%;\
       justify-content: space-around;\
 		}\
@@ -95,12 +90,15 @@
     .page-player .lyrics-synchro .lyrics-item {\
       margin-bottom: unset;\
     }\
-    .track-container{\
-      padding-bottom: 20px;\
-    }\
     .carousel .container{\
       margin-left: 5px !important;\
       width: 97vw !important;\
+    }\
+    .carousel .container .channel-headings .heading-2, .carousel .container .channel-headings .heading-2-sub {\
+      max-width: 65vw !important;\
+      white-space:nowrap;\
+      overflow:hidden;\
+      text-overflow:ellipsis;\
     }\
     .page-main{\
       min-width: 0px !important;\
@@ -122,10 +120,6 @@
     .search-top-result .thumbnail .picture-img{\
       width: 100px;\
       height: 100px;\
-    }\
-    .thumbnail .action {\
-      bottom: 6px !important;\
-      left: 5px !important;\
     }\
     .thumbnail .action-item-btn{\
       opacity: 0.8 !important;\
@@ -251,11 +245,21 @@ function touchHandler(event) {
   //                screenX, screenY, clientX, clientY, ctrlKey, 
   //                altKey, shiftKey, metaKey, button, relatedTarget);
 
-  var simulatedEvent = document.createEvent("MouseEvent");
-  simulatedEvent.initMouseEvent(type, true, true, window, 1, 
-    first.screenX, first.screenY, 
-    first.clientX, first.clientY, false, 
-    false, false, false, 0, null);
+  let simulatedEvent = new MouseEvent(type, { 
+    bubbles: true,
+    cancelable: true,
+    view: window,
+    screenX: first.screenX, 
+    screenY: first.screenY,
+    clientX: first.clientX,
+    clientY: first.clientY,
+    ctrlKey: false,
+    altKey: false,
+    shiftKey: false,
+    metaKey: false,
+    button: 0,
+    relatedTarget: null
+  });
   first.target.dispatchEvent(simulatedEvent);
   event.preventDefault();
 }
