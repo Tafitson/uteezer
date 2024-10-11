@@ -7,197 +7,187 @@ import QtWebEngine 1.7
 import Qt.labs.settings 1.0
 import QtSystemInfo 5.5
 
+// Main application view
 MainView {
-  id:window
-  objectName: "uteezer"
-  theme.name: "Lomiri.Components.Themes.SuruDark"
-
-  applicationName: "uteezer.tafitson"
-
-  backgroundColor : "#000000"
-
+  id: window
+  objectName: "uteezer"  // The unique name for this view
+  theme.name: "Lomiri.Components.Themes.SuruDark"  // Set the theme to SuruDark
+  applicationName: "uteezer.tafitson"  // Application name identifier
+  backgroundColor : "#000000"  // Background color of the main view
+  // WebView component to render web content
   WebView {
     id: webview
-    anchors{ fill: parent}
+    anchors { fill: parent }  // Make the WebView fill the parent container
+      enableSelectOverride: true  // Allow custom selection behavior
+      settings.fullScreenSupportEnabled: true  // Enable fullscreen support
+      property var currentWebview: webview  // Alias for the current WebView instance
+        settings.pluginsEnabled: true  // Enable web plugins
 
-    enableSelectOverride: true
-
-
-    settings.fullScreenSupportEnabled: true
-    property var currentWebview: webview
-    settings.pluginsEnabled: true
-
-    onFullScreenRequested: function(request) {
-      nav.visible = !nav.visible
-      request.accept();
-    }
-
-
-
-    profile:  WebEngineProfile{
-      id: webContext
-      persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies
-      storageName: "Storage"
-      persistentStoragePath: "/home/phablet/.cache/uteezer.tafitson/QtWebEngine"
-      property alias dataPath: webContext.persistentStoragePath
-
-      dataPath: dataLocation
-
-
-      
-      httpUserAgent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36"
-    }
-
-    anchors{
-      fill:parent
-    }
-
-    url: "https://www.deezer.com/"
-    userScripts: [
-      WebEngineScript {
-        injectionPoint: WebEngineScript.DocumentReady
-        worldId: WebEngineScript.UserWorld
-        name: "QWebChannel"
-        sourceUrl: "ubuntutheme.js"
+        // Handle fullscreen requests
+        onFullScreenRequested: function(request) {
+        nav.visible = !nav.visible  // Toggle navigation visibility
+        request.accept();  // Accept the fullscreen request
       }
-    ]
 
-      
-  }
-  RadialBottomEdge {
-    id: nav
-    visible: true
-    actions: [
-      RadialAction {
-        id: home
-        iconName: "home"
-        onTriggered: {
-          webview.runJavaScript('var link = document.getElementsByClassName("css-10rh1s9")[0].childNodes[0]; \
-            link.click();')
+      // WebEngine profile settings for the WebView
+      profile: WebEngineProfile {
+        id: webContext
+        persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies  // Ensure cookies are persistent
+        storageName: "Storage"  // Name of the storage for web data
+        persistentStoragePath: "/home/phablet/.cache/uteezer.tafitson/QtWebEngine"  // Path for persistent storage
+        property alias dataPath: webContext.persistentStoragePath  // Alias for data path
+          dataPath: dataLocation  // Path to the data location
+          httpUserAgent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36"  // User-Agent string for HTTP requests
         }
-        text: qsTr("Home")
-      },
 
-      RadialAction {
-        id: explore
-        iconName: "grip-large"
-        onTriggered: {
-          webview.runJavaScript('var link = document.getElementsByClassName("css-10rh1s9")[0].childNodes[1]; \
-            link.click();')
+        anchors {
+          fill: parent  // Make WebView fill its parent container
         }
-        text: qsTr("Explore")
-      },
 
-      RadialAction {
-        id: forward
-        enabled: webview.canGoForward
-        iconName: "go-next"
-        onTriggered: {
-          webview.goForward()
-        }
-        text: qsTr("Forward")
-      },
-
-      RadialAction {
-        id: reload
-        iconName: "reload"
-        onTriggered: {
-          webview.reload()
-        }
-        text: qsTr("Reload")
-      },
-      
-      RadialAction {
-        id: darkmode
-        iconName: "night-mode"
-        onTriggered: {
-          webview.runJavaScript('var profile = document.getElementsByClassName("topbar-profile")[0]; \
-            var clickProfile = profile && !profile.classList.contains("is-active"); \
-            if(clickProfile) profile.click(); \
-            var dmSwitch = document.getElementsByClassName("css-1967ax6")[0]; \
-            dmSwitch.click(); \
-            if(clickProfile) profile.click();')
-        }
-        text: qsTr("Toggle Dark Mode")
-      },
-
-      RadialAction {
-        id: back
-        enabled: webview.canGoBack
-        iconName: "go-previous"
-        onTriggered: {
-          webview.goBack()
-        }
-        text: qsTr("Back")
-      },
-
-      RadialAction {
-        id: favorites
-        iconName: "like"
-        onTriggered: {
-          webview.runJavaScript('var link = document.getElementsByClassName("css-10rh1s9")[0].childNodes[0]; \
-            link.click();')
-        }
-        text: qsTr("Favorites")
-      }        
-    ]
-  }
-
-  Connections {
-    target: Qt.inputMethod
-    onVisibleChanged: nav.visible = !nav.visible
-  }
-
-  Connections {
-    target: webview
-
-    onIsFullScreenChanged: {
-      window.setFullscreen()
-      if (currentWebview.isFullScreen) {
-        nav.state = "hidden"
+        url: "https://www.deezer.com/"  // URL to load in the WebView
+        userScripts: [
+          WebEngineScript {
+            injectionPoint: WebEngineScript.DocumentReady  // Inject script when the document is ready
+            worldId: WebEngineScript.UserWorld  // Use the UserWorld for script execution
+            name: "QWebChannel"  // Name of the script
+            sourceUrl: "ubuntutheme.js"  // URL of the script source
+          }
+        ]
       }
-      else {
-        nav.state = "shown"
-      }
+
+      // Radial bottom edge for navigation actions
+      RadialBottomEdge {
+        id: nav
+        visible: true  // Make the navigation visible by default
+        actions: [
+          RadialAction {
+            id: home
+            iconName: "home"
+            onTriggered: {
+              webview.runJavaScript('var link = document.getElementsByClassName("chakra-link")[1]; \
+              link.click();')  // Execute JavaScript to click the home link
+            }
+            text: qsTr("Home")  // Text for the home action
+          },
+
+          RadialAction {
+            id: explore
+            iconName: "grip-large"
+            onTriggered: {
+              webview.runJavaScript('var link = document.getElementsByClassName("chakra-link")[2]; \
+              link.click();')  // Execute JavaScript to click the explore link
+            }
+            text: qsTr("Explore") // Text for the explore action
+          },
+
+          RadialAction {
+            id: forward
+            enabled: webview.canGoForward  // Enable forward action if possible
+            iconName: "go-next"
+            onTriggered: {
+              webview.goForward()  // Navigate forward in history
+            }
+            text: qsTr("Forward")  // Text for the forward action
+          },
+
+          RadialAction {
+            id: reload
+            iconName: "reload"
+            onTriggered: {
+              webview.reload()  // Reload the current page
+            }
+            text: qsTr("Reload")  // Text for the reload action
+          },
+
+          RadialAction {
+            id: darkmode
+            iconName: "night-mode"
+            onTriggered: {
+              webview.runJavaScript('var profile = document.getElementsByClassName("chakra-avatar")[0]; \
+              var clickProfile = profile && !profile.classList.contains("is-active"); \
+              console.log("clickProfileclickProfileclickProfileclickProfile => " + clickProfile); \
+              if (clickProfile) profile.click(); \
+              setTimeout(function(){ \
+              var dmSwitch = document.getElementsByClassName("chakra-switch__input")[0]; \
+              dmSwitch.click(); \
+              if (clickProfile) profile.click(); \
+            }, 1000);') // Execute JavaScript to click the Toggle Dark Mode link
+          }
+          text: qsTr("Toggle Dark Mode")  // Text for the Toggle Dark Mode action
+        },
+        RadialAction {
+          id: back
+          enabled: webview.canGoBack  // Enable back action if possible
+          iconName: "go-previous"
+          onTriggered: {
+            webview.goBack()  // Navigate back in history
+          }
+          text: qsTr("Back")  // Text for the back action
+        },
+        RadialAction {
+          id: favorites
+          iconName: "like"
+          onTriggered: {
+            webview.runJavaScript('var link = document.getElementsByClassName("chakra-link")[3]; \
+            link.click();')  // Execute JavaScript to click the favorites link
+          }
+          text: qsTr("Favorites")  // Text for the favorites action
+        }
+      ]
     }
-    
-  }
 
-  Connections {
-    target: webview
-    
-    onIsFullScreenChanged: window.setFullscreen(webview.isFullScreen)
-  }
-  function setFullscreen(fullscreen) {
-    if (!window.forceFullscreen) {
-      if (fullscreen) {
-        if (window.visibility != Window.FullScreen) {
-          internal.currentWindowState = window.visibility
-          window.visibility = 5
-        }
-      } else {
-        window.visibility = internal.currentWindowState
-        //window.currentWebview.fullscreen = false
-        //window.currentWebview.fullscreen = false
+    // Connection to handle input method visibility changes
+    Connections {
+      target: Qt.inputMethod
+      onVisibleChanged: nav.visible = !nav.visible  // Toggle navigation visibility when input method visibility changes
+    }
+
+    // Connection to handle fullscreen changes in WebView
+    Connections {
+      target: webview
+      onIsFullScreenChanged: {
+        window.setFullscreen()  // Update the window's fullscreen state
+        if (currentWebview.isFullScreen)
+        {
+          nav.state = "hidden"  // Hide navigation if in fullscreen
+        } else {
+        nav.state = "shown"  // Show navigation if not in fullscreen
       }
     }
   }
 
-  Connections {
-    target: UriHandler
-
-    onOpened: {
-
-      if (uris.length > 0) {
-        console.log('Incoming call from UriHandler ' + uris[0]);
-        webview.url = uris[0];
+  // Function to set fullscreen mode
+  function setFullscreen(fullscreen)
+  {
+    if (!window.forceFullscreen) {  // Check if force fullscreen is not enabled
+    if (fullscreen)
+    {
+      if (window.visibility != Window.FullScreen)
+      {
+        internal.currentWindowState = window.visibility  // Store current window state
+        window.visibility = Window.FullScreen  // Set window to fullscreen
       }
+    } else {
+    window.visibility = internal.currentWindowState  // Restore previous window state
+  }
+}
+}
+
+// Connection to handle URI handler events
+Connections {
+  target: UriHandler
+  onOpened: {
+    if (uris.length > 0)
+    {
+      console.log('Incoming call from UriHandler ' + uris[0]);  // Log the URI
+      webview.url = uris[0];  // Load the URI in the WebView
     }
   }
+}
 
-
-  ScreenSaver {
-    id: screenSaver
-    screenSaverEnabled: !(Qt.application.active) || !webview.recentlyAudible
-  }
+// ScreenSaver configuration
+ScreenSaver {
+  id: screenSaver
+  screenSaverEnabled: !(Qt.application.active) || !webview.recentlyAudible  // Enable screen saver if application is not active or WebView is not recently audible
+}
 }
