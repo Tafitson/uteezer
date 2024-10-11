@@ -19,6 +19,34 @@
       z-index: 301;\
       max-width: 97%;\
     }\
+    #page_topbar .popper-wrapper .popper .popper-content.popper-account{\
+      z-index: 301;\
+      max-width: 97%;\
+    }\
+    [data-testid=\"duration_sort\"]{\
+      display: none;\
+    }\
+    [data-testid=\"duration\"]{\
+      display: none;\
+    }\
+    [data-testid=\"explicit_label\"]{\
+      display: none;\
+    }\
+    [data-testid=\"MicrophoneIcon\"]{\
+      display: none;\
+    }\
+    .JIYRe>:not(:first-child) {\
+      margin-left: 8px;\
+    }\
+    .RYR7U.TTdph.icMti {\
+      display: none;\
+    }\
+    .TTdph {\
+      width: 0px;\
+    }\
+    .css-xw5h76 {\
+      min-width: 0px;\
+    }\
 		.css-efpag6{\
 			visibility:hidden !important;\
 		} \
