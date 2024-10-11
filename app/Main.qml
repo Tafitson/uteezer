@@ -12,7 +12,8 @@ MainView {
   id: window
   objectName: "uteezer"  // The unique name for this view
   theme.name: "Lomiri.Components.Themes.SuruDark"  // Set the theme to SuruDark
-  applicationName: "uteezer.tafitson"  // Application name identifier
+  // Application name identifier
+  applicationName: "uteezer.tafitson"
   backgroundColor : "#000000"  // Background color of the main view
   // WebView component to render web content
   WebView {

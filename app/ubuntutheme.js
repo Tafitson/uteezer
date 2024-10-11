@@ -1,6 +1,6 @@
 (window.onload = function () {
 	let css = 
-	"@media (max-width: 990px){\
+	"@media (max-width: 850px){\
 		body{\
 			overflow:auto !important;\
 			min-width: unset !important;\
@@ -22,9 +22,6 @@
 		.css-efpag6{\
 			visibility:hidden !important;\
 		} \
-		#page_content{\
-			margin-left: 0px !important;\
-		}\
 		#page_player .css-tzddi9{\
 			min-width: 0px!important;\
 			height: auto;\
@@ -92,7 +89,7 @@
     }\
     .carousel .container{\
       margin-left: 5px !important;\
-      width: 97vw !important;\
+      width: 79vw !important;\
     }\
     .carousel .container .channel-headings .heading-2, .carousel .container .channel-headings .heading-2-sub {\
       max-width: 65vw !important;\
