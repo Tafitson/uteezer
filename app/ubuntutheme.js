@@ -23,13 +23,13 @@
       z-index: 301;\
       max-width: 97%;\
     }\
-    [data-testid=\"duration_sort\"]{\
+    [data-testid=\"duration\_sort\"]{\
       display: none;\
     }\
     [data-testid=\"duration\"]{\
       display: none;\
     }\
-    [data-testid=\"explicit_label\"]{\
+    [data-testid=\"explicit\_label\"]{\
       display: none;\
     }\
     [data-testid=\"MicrophoneIcon\"]{\
@@ -50,21 +50,21 @@
 		.css-efpag6{\
 			visibility:hidden !important;\
 		} \
-		#page_player .css-tzddi9{\
+		#page_player .css-1d4hfp6{\
 			min-width: 0px!important;\
 			height: auto;\
 			display: block !important;\
       z-index: 300 !important;\
 		} \
-		.page-player .css-tzddi9 .css-w7wtb1 {\
+		.page-player .css-1d4hfp6 .css-1hrq5q6 {\
 			padding: 0px !important;\
 			width: 100%;\
       padding-bottom: 20px;\
 		}\
-		.page-player .css-tzddi9 .css-s4gaps{\
+		.page-player .css-1d4hfp6 .css-s4gaps{\
 			width: 100%;\
 		}\
-		.page-player .css-tzddi9 .css-4vwzwv{\
+		.page-player .css-1d4hfp6 .css-4vwzwv{\
 			width: 100%;\
       justify-content: space-around;\
 		}\
